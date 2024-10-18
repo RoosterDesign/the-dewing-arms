@@ -1,0 +1,82 @@
+@import '@/app/mixins.scss';
+
+.nav {
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    gap: rem(30);
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+
+    ul {
+        @include basicList;
+        display: grid;
+        gap: rem(30);
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+
+        a {
+            color: var(--colour--accent);
+            font-family: var(--font--secondary);
+            font-size: rem(18);
+            text-transform: uppercase;
+            transition: var(--hover-transition);
+
+            &:hover {
+                color: var(--off-white);
+            }
+
+        }
+
+    }
+
+}
+
+.logo {
+    transition: width .2s ease-in-out;
+    height: auto;
+    width: rem(150);
+
+    &.scrolled {
+        width: rem(80);
+    }
+
+}
+
+
+@media (max-width: rem(700)) {
+
+    .header {
+        display: none;
+    }
+
+}
+
+@include breakpoint(md) {
+
+    .nav {
+
+        ul {
+            gap: rem(50);
+        }
+
+        ul {
+
+            a {
+                font-size: rem(22);
+            }
+
+        }
+
+    }
+
+    .logo {
+        width: rem(200);
+
+        &.scrolled {
+            width: rem(100);
+        }
+
+    }
+
+}

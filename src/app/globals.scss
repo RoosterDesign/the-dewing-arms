@@ -8,9 +8,9 @@
     --yellow: #DBCAAF;
     --off-white: #FAFAFA;
 
-    --primary: var(--off-black);
-    --secondary: var(--medium-black);
-    --accent: var(--yellow);
+    --colour--primary: var(--off-black);
+    --colour--secondary: var(--medium-black);
+    --colour--accent: var(--yellow);
 
     //= Typography
     --font--primary: var(--font-itc_benguiat);
@@ -19,20 +19,19 @@
     --font--regular: 400;
 
     //= Transitions
-    // --hover-transition: all .2s ease-in-out;
+    --hover-transition: all .2s ease-in-out;
 
     //= Buttons
-    --button-bg: var(--accent);
-    --button-colour: var(--secondary);
+    --button-bg: var(--colour--accent);
+    --button-colour: var(--colour--secondary);
 
-    --button-bg--hover: var(--secondary);
-    --button-colour--hover: var(--accent);
+    --button-bg--hover: var(--colour--secondary);
+    --button-colour--hover: var(--colour--accent);
 
 
     //= Custom Scrollbar
-    --sb-thumb-color: var(--accent);
-    // --sb-track-color: rgba(255, 255, 255, 0.05);
-    --sb-track-color: var(--secondary);
+    --sb-thumb-color: var(--colour--accent);
+    --sb-track-color: var(--colour--secondary);
     --sb-size: 8px;
 
     //= General
@@ -52,9 +51,9 @@ html {
 }
 
 body {
-    color: var(--accent);
-    background: var(--primary);
-    font-family: var(--primary-font);
+    color: var(--colour--accent);
+    background: var(--colour--primary);
+    font-family: var(--font--primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -84,7 +83,6 @@ a {
     color: inherit;
     text-decoration: none;
 }
-
 
 h1,
 h2,
@@ -129,23 +127,12 @@ h3 {
 p {
     font-size: rem(18);
     line-height: rem(32);
-    margin: 0 0 rem(32);
-
-    margin-bottom: rem(40);
+    margin: 0 0 rem(40);
 
     &:last-of-type {
         margin-bottom: 0;
     }
 
-}
-
-.container {
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding);
-    max-width: rem(1640);
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
 }
 
 .block {

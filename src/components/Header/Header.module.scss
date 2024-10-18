@@ -1,0 +1,37 @@
+@import '@/app/mixins.scss';
+
+.header {
+    left: 0;
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    &.scrolled {
+        background: var(--colour--secondary);
+    }
+
+}
+
+
+@media (max-width: rem(700)) {
+
+    .header {
+        display: none;
+    }
+
+}
+
+@include breakpoint(md) {
+
+    .header {
+        display: grid;
+
+        >div {
+            gap: rem(50);
+        }
+
+    }
+
+}

@@ -1,0 +1,10 @@
+@import '@/app/mixins.scss';
+
+.container {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    max-width: rem(1640);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}

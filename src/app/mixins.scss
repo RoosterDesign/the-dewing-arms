@@ -75,33 +75,3 @@ $breakpoints: (xs: (min: rem(414),
     margin: 0;
     padding: 0;
 }
-// @mixin button() {
-//     align-items: center;
-//     background: var(--button-bg);
-//     border-radius: var(--border-radius);
-//     border: none;
-//     color: var(--button-colour);
-//     cursor: pointer;
-//     display: inline-flex;
-//     min-height: rem(55);
-//     justify-content: center;
-//     font-size: rem(16);
-//     font-weight: var(--fw-bold);
-//     line-height: 1;
-//     padding: 0 rem(30);
-//     text-decoration: none;
-//     transition: var(--hover-transition);
-
-//     @media not all and (hover: none) {
-//         &:hover {
-//             background: var(--button-hover-bg);
-//             color: var(--button-hover-colour);
-//             transform: scale(1.03);
-//         }
-//     }
-
-//     @include breakpoint(lg) {
-//         font-size: rem(18);
-//     }
-
-// }
