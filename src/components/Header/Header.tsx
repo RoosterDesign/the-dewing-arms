@@ -8,6 +8,7 @@ import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
     const [scrolled, setScrolled] = useState<boolean>(false);
+    const [navOpen, setNavOpen] = useState<boolean>(true);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,13 +24,19 @@ const Header: React.FC = () => {
         };
     }, []);
 
-
+    const handleToggleNav = () => {
+        setNavOpen(!navOpen);
+    };
 
     return (
         <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
             <Container>
 
-                <Nav isScrolled={scrolled} />
+                <button className={`${styles.navToggle} ${navOpen ? styles.open : ''}`} onClick={handleToggleNav}>
+                    <span></span>
+                </button>
+
+                <Nav isScrolled={scrolled} isNavOpen={navOpen} />
 
 
             </Container>

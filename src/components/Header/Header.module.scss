@@ -1,24 +1,92 @@
 @import '@/app/mixins.scss';
 
 .header {
+    background: transparent;
     left: 0;
     padding-top: rem(10);
     padding-bottom: rem(10);
     position: fixed;
+    transition: all .3s ease-in-out;
     top: 0;
     width: 100%;
+}
 
-    &.scrolled {
+.navToggle {
+    align-items: center;
+    background: var(--colour--accent);
+    border: none;
+    display: flex;
+    justify-content: center;
+    height: rem(60);
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: rem(60);
+    z-index: 10;
+
+    &.open {
         background: var(--colour--secondary);
+
+        span,
+        span::before {
+            background: var(--colour--accent);
+        }
+
+        span {
+            transform: rotate(45deg);
+        }
+
+        span::before {
+            transform: rotate(90deg);
+            top: rem(0);
+        }
+
+        span::after {
+            display: none;
+        }
+
+    }
+
+    span,
+    span::before,
+    span::after {
+        background: var(--colour--secondary);
+        border-radius: rem(2);
+        height: rem(4);
+        width: rem(30);
+    }
+
+    span {
+        display: block;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            left: 0;
+            position: absolute;
+        }
+
+        &::before {
+            top: rem(-10);
+        }
+
+        &::after {
+            bottom: rem(-10);
+        }
+
     }
 
 }
 
+@media (min-width: rem(700)) {
 
-@media (max-width: rem(700)) {
+    header {
 
-    .header {
-        display: none;
+        &.scrolled {
+            background: var(--colour--secondary);
+        }
+
     }
 
 }
@@ -27,6 +95,8 @@
 
     .header {
         display: grid;
+
+
 
         >div {
             gap: rem(50);

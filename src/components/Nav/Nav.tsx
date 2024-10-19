@@ -5,9 +5,10 @@ import styles from './Nav.module.scss';
 
 interface Props {
     isScrolled: boolean;
+    isNavOpen: boolean;
 }
 
-const Nav: React.FC<Props> = ({ isScrolled }) => {
+const Nav: React.FC<Props> = ({ isScrolled, isNavOpen }) => {
 
     const leftNav = [{
         label: 'Home',
@@ -36,7 +37,7 @@ const Nav: React.FC<Props> = ({ isScrolled }) => {
     }];
 
     return (
-        <nav className={styles.nav}>
+        <nav className={`${styles.nav} ${isNavOpen ? styles.open : ''}`}>
             <ul>
                 {leftNav.map((item, i) => (
                     <NavItem item={item} key={i} />

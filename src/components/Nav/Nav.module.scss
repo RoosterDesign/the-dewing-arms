@@ -2,23 +2,34 @@
 
 .nav {
     align-items: center;
-    display: grid;
+    background: var(--colour--accent);
+    display: flex;
+    gap: rem(50);
+    flex-direction: column;
     justify-content: center;
-    gap: rem(30);
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
+    text-align: center;
+    left: 100%;
+    position: fixed;
+    transition: all .3s ease-in-out;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+    &.open {
+        left: 0;
+    }
 
     ul {
         @include basicList;
         display: grid;
-        gap: rem(30);
-        grid-auto-flow: column;
-        grid-auto-columns: max-content;
+        gap: rem(50);
 
         a {
-            color: var(--colour--accent);
+            // color: var(--colour--accent);
+            color: var(--colour--secondary);
             font-family: var(--font--secondary);
-            font-size: rem(18);
+            // font-size: rem(18);
+            font-size: rem(24);
             text-transform: uppercase;
             transition: var(--hover-transition);
 
@@ -33,21 +44,45 @@
 }
 
 .logo {
-    transition: width .2s ease-in-out;
-    height: auto;
-    width: rem(150);
+    display: none;
+}
 
-    &.scrolled {
-        width: rem(80);
+
+@media (max-width: rem(699.98)) {
+
+    .nav {
+        // display: none;
     }
 
 }
 
 
-@media (max-width: rem(700)) {
+@media (min-width: rem(700)) {
 
-    .header {
-        display: none;
+    .nav {
+        display: grid;
+        gap: rem(30);
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+
+        ul {
+            gap: rem(30);
+            grid-auto-flow: column;
+            grid-auto-columns: max-content;
+        }
+
+    }
+
+    .logo {
+
+        transition: width .2s ease-in-out;
+        height: auto;
+        width: rem(150);
+
+        &.scrolled {
+            width: rem(80);
+        }
+
     }
 
 }
