@@ -1,0 +1,82 @@
+@import '@/app/mixins.scss';
+
+.hero {
+    align-items: center;
+    background-image: url('https://picsum.photos/id/237/2560/1920');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    isolation: isolate;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+    }
+
+    &::before {
+        border: rem(2) solid var(--colour--accent);
+        inset: rem(20);
+        z-index: -10;
+    }
+
+    &::after {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 70%);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: -20;
+    }
+
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.facilities {
+    @include basicList;
+    border-top: rem(2) solid var(--colour--accent);
+    border-bottom: rem(2) solid var(--colour--accent);
+    display: flex;
+    font-family: var(--font--secondary);
+    font-size: rem(30);
+    margin-top: rem(40);
+    padding: rem(20) rem(5);
+    text-transform: uppercase;
+
+    li {
+        align-items: center;
+        display: flex;
+
+        &:after {
+            background: var(--colour--accent);
+            border-radius: 50%;
+            content: '';
+            display: block;
+            height: rem(6);
+            margin-left: rem(30);
+            margin-right: rem(30);
+            width: rem(6);
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+
+    }
+}
+
+@include breakpoint(lg) {
+
+    .hero {
+        height: 100vh;
+    }
+
+}

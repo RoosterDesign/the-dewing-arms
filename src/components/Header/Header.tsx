@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
     const [scrolled, setScrolled] = useState<boolean>(false);
-    const [navOpen, setNavOpen] = useState<boolean>(true);
+    const [navOpen, setNavOpen] = useState<boolean>(false);
 
     useEffect(() => {
         const handleScroll = () => {

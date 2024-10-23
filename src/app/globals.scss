@@ -93,34 +93,28 @@ h6 {
     font-weight: var(--font--regular);
 }
 
-h1,
-h2 {
-    font-family: var(--font--primary);
-}
+// h1,
+// h2 {
+//     font-family: var(--font--primary);
+// }
 
 h3 {
     font-family: var(--font--secondary);
     text-transform: uppercase;
 }
 
-.h1,
-h1 {
-    font-size: rem(56);
-}
+// .h1,
+// h1 {
+//     font-size: rem(56);
+// }
 
-.h2,
-h2 {
-    font-size: rem(48);
-}
+// .h2,
+// h2 {
+//     font-size: rem(48);
+// }
 
 .h3,
 h3 {
-    font-size: rem(32);
-}
-
-.sub-heading {
-    color: var(--off-white);
-    font-family: var(--font--tertiary);
     font-size: rem(32);
 }
 
@@ -167,24 +161,19 @@ p {
 }
 
 @include breakpoint(md) {
+// .h1,
+// h1 {
+//     font-size: rem(96);
+// }
 
-    .h1,
-    h1 {
-        font-size: rem(96);
-    }
-
-    .h2,
-    h2 {
-        font-size: rem(72);
-    }
+// .h2,
+// h2 {
+//     font-size: rem(72);
+// }
 
     .h3,
     h3 {
         font-size: rem(32);
-    }
-
-    .sub-heading {
-        font-size: rem(40);
     }
 
     p {
@@ -197,23 +186,19 @@ p {
 
 @include breakpoint(xl) {
 
-    .h1,
-    h1 {
-        font-size: rem(120);
-    }
+    // .h1,
+   // h1 {
+   //     font-size: rem(120);
+   // }
 
-    .h2,
-    h2 {
-        font-size: rem(80);
-    }
+   // .h2,
+   // h2 {
+   //     font-size: rem(80);
+   // }
 
     .h3,
     h3 {
         font-size: rem(40);
-    }
-
-    .sub-heading {
-        font-size: rem(56);
     }
 
     p {

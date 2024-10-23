@@ -3,85 +3,94 @@
 .header {
     background: transparent;
     left: 0;
-    padding-top: rem(10);
-    padding-bottom: rem(10);
     position: fixed;
-    transition: all .3s ease-in-out;
+    transition: background .3s ease-in-out;
     top: 0;
     width: 100%;
+    z-index: 100;
 }
 
-.navToggle {
-    align-items: center;
-    background: var(--colour--accent);
-    border: none;
-    display: flex;
-    justify-content: center;
-    height: rem(60);
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: rem(60);
-    z-index: 10;
+@include breakpoint(sm, max) {
 
-    &.open {
-        background: var(--colour--secondary);
+    .navToggle {
+        align-items: center;
+        background: var(--colour--accent);
+        border: none;
+        display: flex;
+        justify-content: center;
+        height: rem(60);
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: rem(60);
+        z-index: 100;
+
+        &.open {
+            background: var(--colour--secondary);
+
+            span,
+            span::before {
+                background: var(--colour--accent);
+            }
+
+            span {
+                transform: rotate(45deg);
+            }
+
+            span::before {
+                transform: rotate(90deg);
+                top: rem(0);
+            }
+
+            span::after {
+                display: none;
+            }
+
+        }
 
         span,
-        span::before {
-            background: var(--colour--accent);
+        span::before,
+        span::after {
+            background: var(--colour--secondary);
+            border-radius: rem(2);
+            height: rem(4);
+            width: rem(30);
         }
 
         span {
-            transform: rotate(45deg);
-        }
+            display: block;
+            position: relative;
 
-        span::before {
-            transform: rotate(90deg);
-            top: rem(0);
-        }
+            &::before,
+            &::after {
+                content: '';
+                left: 0;
+                position: absolute;
+            }
 
-        span::after {
-            display: none;
-        }
+            &::before {
+                top: rem(-10);
+            }
 
-    }
+            &::after {
+                bottom: rem(-10);
+            }
 
-    span,
-    span::before,
-    span::after {
-        background: var(--colour--secondary);
-        border-radius: rem(2);
-        height: rem(4);
-        width: rem(30);
-    }
-
-    span {
-        display: block;
-        position: relative;
-
-        &::before,
-        &::after {
-            content: '';
-            left: 0;
-            position: absolute;
-        }
-
-        &::before {
-            top: rem(-10);
-        }
-
-        &::after {
-            bottom: rem(-10);
         }
 
     }
 
 }
 
-@media (min-width: rem(700)) {
+@include breakpoint(sm) {
 
-    header {
+    .navToggle {
+        display: none;
+    }
+
+    .header {
+        padding-top: rem(20);
+        padding-bottom: rem(20);
 
         &.scrolled {
             background: var(--colour--secondary);
@@ -95,8 +104,14 @@
 
     .header {
         display: grid;
+        padding-top: rem(40);
+        padding-bottom: rem(40);
 
-
+        &.scrolled {
+            background: var(--colour--secondary);
+            padding-top: rem(20);
+            padding-bottom: rem(20);
+        }
 
         >div {
             gap: rem(50);

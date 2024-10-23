@@ -13,8 +13,10 @@
 
 $breakpoints: (xs: (min: rem(414),
         max: rem(413.98)),
-    sm: (min: rem(576),
-        max: rem(575.98)),
+    // sm: (min: rem(576),
+    //     max: rem(575.98)),
+    sm: (min: rem(700),
+        max: rem(699.98)),
     md: ( // min: rem(768),
         // max: rem(767.98)
         min: rem(992),

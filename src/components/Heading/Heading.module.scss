@@ -1,0 +1,79 @@
+@import '@/app/mixins.scss';
+
+.heading {
+    text-align: center;
+
+    h1,
+    h2 {
+        font-family: var(--font--primary);
+    }
+
+    h1 {
+        font-size: rem(56);
+    }
+
+    h2 {
+        font-size: rem(48);
+    }
+
+    span {
+        color: var(--off-white);
+        display: block;
+        font-family: var(--font--tertiary);
+        font-size: rem(32);
+        margin-bottom: rem(10);
+    }
+
+}
+
+@include breakpoint(md) {
+
+    .heading {
+
+        h1 {
+            font-size: rem(96);
+
+            span {
+                font-size: rem(56);
+            }
+
+        }
+
+        h2 {
+            font-size: rem(72);
+
+            span {
+                font-size: rem(40);
+            }
+
+        }
+
+    }
+
+}
+
+@include breakpoint(xl) {
+
+    .heading {
+
+        h1 {
+            font-size: rem(165);
+
+            span {
+                font-size: rem(72);
+            }
+
+        }
+
+        h2 {
+            font-size: rem(80);
+
+            span {
+                font-size: rem(56);
+            }
+
+        }
+
+    }
+
+}

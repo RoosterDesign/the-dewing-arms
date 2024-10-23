@@ -1,12 +1,14 @@
 import Header from '@/components/Header/Header';
+import Hero from '@/components/Hero/Hero';
 
 export default function Home() {
     return (
         <>
 
             <section className="" id="top">
-                <Header />
-                <h1>hero...</h1>
+                <Hero>
+                    <Header />
+                </Hero>
             </section>
 
             <section className="block" id="facilities">

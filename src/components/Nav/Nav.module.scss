@@ -2,22 +2,7 @@
 
 .nav {
     align-items: center;
-    background: var(--colour--accent);
-    display: flex;
-    gap: rem(50);
-    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    left: 100%;
-    position: fixed;
-    transition: all .3s ease-in-out;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-
-    &.open {
-        left: 0;
-    }
 
     ul {
         @include basicList;
@@ -25,18 +10,9 @@
         gap: rem(50);
 
         a {
-            // color: var(--colour--accent);
-            color: var(--colour--secondary);
             font-family: var(--font--secondary);
-            // font-size: rem(18);
-            font-size: rem(24);
             text-transform: uppercase;
             transition: var(--hover-transition);
-
-            &:hover {
-                color: var(--off-white);
-            }
-
         }
 
     }
@@ -48,33 +24,69 @@
 }
 
 
-@media (max-width: rem(699.98)) {
+@include breakpoint(sm, max) {
 
     .nav {
-        // display: none;
+        background: var(--colour--accent);
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: rem(50);
+        left: 100%;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        transition: all .3s ease-in-out;
+        width: 100%;
+
+        &.open {
+            left: 0;
+        }
+
+        ul {
+
+            a {
+                color: var(--colour--secondary);
+                font-size: rem(24);
+            }
+
+        }
+
     }
 
 }
 
 
-@media (min-width: rem(700)) {
+@include breakpoint(sm) {
 
     .nav {
         display: grid;
-        gap: rem(30);
+        gap: rem(10);
         grid-auto-flow: column;
         grid-auto-columns: max-content;
 
         ul {
-            gap: rem(30);
+            gap: rem(25);
             grid-auto-flow: column;
             grid-auto-columns: max-content;
+
+            a {
+                color: var(--off-white);
+                font-size: rem(18);
+
+                &.active,
+                &:hover {
+                    color: var(--colour--accent);
+                }
+
+            }
+
         }
 
     }
 
     .logo {
-
+        display: block;
         transition: width .2s ease-in-out;
         height: auto;
         width: rem(150);
@@ -90,6 +102,7 @@
 @include breakpoint(md) {
 
     .nav {
+        gap: rem(30);
 
         ul {
             gap: rem(50);
